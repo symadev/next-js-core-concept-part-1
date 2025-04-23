@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       >
         <NavBar></NavBar>
 
-        <main className="h-screen h-max-[700px] place-content-center place-items-center text-lg font-medium">
+        <main className="h-screen h-max-[700px] text-lg font-medium">
           {/* //this is works like outlet */}
         {children}
         </main >
-        <footer className="text-center bg-amber-500">
+        <footer className="text-center p-10  text-4xl font-extrabold bg-amber-500">
           this is awesome component
         </footer>
        
