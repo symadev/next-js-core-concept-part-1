@@ -1,10 +1,5 @@
-'use client';
-
-import React from 'react';
-import Link from 'next/link';
-
-export default function ServicesPage() {
-  const data = [
+//data gulo aikahne o must peast korte hobe
+const data = [
     {
       id: 1,
       name: "Haircut & Styling",
@@ -31,20 +26,18 @@ export default function ServicesPage() {
     },
   ];
 
-  return (
-    <div className='p-6'>
-      <h1 className='text-3xl text-amber-500 font-bold mb-6'>ServicesPage</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map((d) => (
-          <div key={d.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition">
-            <Link href={`/services/${d.id}`}>
-              <img src={d.image} alt={d.name} className="w-full h-48 object-cover rounded" />
-            </Link>
-            <h2 className="text-xl font-semibold mt-2">{d.name}</h2>
-            <p className="text-gray-600">{d.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+
+export default function ServicesPages({ params }) {
+    const id = params.id;
+    const singleData = data.find((d)=> d.id == id);
+    return (
+
+        //localhost a amra je id e dey na kno oi id ta e show korbe
+        <div>
+            <p>ServicesPages</p>
+            <p>Id:{id}</p>
+            <p>singleData:{singleData.name}</p>
+            <p><img src={singleData.image}  /></p>
+        </div>
+    )
 }
