@@ -30,14 +30,21 @@ const data = [
 export default function ServicesPages({ params }) {
     const id = params.id;
     const singleData = data.find((d)=> d.id == id);
-    return (
+    // ai condition debar mane holo jdi specific ai ar oikhane oi konomid thake taile no founded show korbe
+    if (singleData){
+        return (
 
-        //localhost a amra je id e dey na kno oi id ta e show korbe
-        <div>
-            <p>ServicesPages</p>
-            <p>Id:{id}</p>
-            <p>singleData:{singleData.name}</p>
-            <p><img src={singleData.image}  /></p>
-        </div>
-    )
+            //localhost a amra je id e dey na kno oi id ta e show korbe
+            <div>
+                <p>ServicesPages</p>
+                <p>Id:{id}</p>
+                <p>singleData:{singleData.name}</p>
+                <p><img src={singleData.image}  /></p>
+            </div>
+        )
+    }
+    else{
+        return ('NOT FOUND SERVICE')
+    }
+   
 }
